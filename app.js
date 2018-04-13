@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-MongoClient.connect('mongodb://localhost:27017/groovy', (err, client) => {
+mongoose.connect('mongodb://localhost:27017/groovy', (err, client) => {
   // Client returned
   var db = client.db('groovy');
 });
