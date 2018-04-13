@@ -50,6 +50,22 @@ body{
     cursor:pointer !important;
     text-decoration:none;
 }
+
+.order-button {
+    background-color:#fff;
+    color: #fc592e !important;
+    border-radius: 2px;
+    margin: 12px 20px 11px 20px !important;
+    padding: 10px 20px 10px 20px !important;
+    text-align:center;
+}
+.order-button:hover{
+    background-color:#fc592e !important;
+    color: #fff !important;
+    cursor:pointer !important;
+    text-decoration:none;
+}
+
 .navbar-menus {
     margin-top: 4px;
 }
