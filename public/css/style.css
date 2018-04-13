@@ -1635,6 +1635,8 @@ nav .nav-link:hover{
 }
 
 .broadband-fiber-package .price-package{
+    color:#fc592e;
+    float:left;
     text-align:left !important;
 }
 
@@ -1649,6 +1651,7 @@ nav .nav-link:hover{
     }
     
     .broadband-fiber-package .price-package{
+        float:none;
         text-align:center !important;
     }
     
