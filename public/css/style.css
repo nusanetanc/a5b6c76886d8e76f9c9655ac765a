@@ -38,7 +38,7 @@ body{
 .sign-in-button {
     background: linear-gradient(to right, #f05e34 , #f6a33e);
     color: #fff !important;
-    border-radius: 2px;
+    border-radius: 20px;
     font-weight:400 !important;
     margin: 12px 20px 11px 20px !important;
     padding: 7px 20px 7px 20px !important;
@@ -55,8 +55,9 @@ body{
     background-color:#fff;
     color: #fc592e !important;
     border-radius: 2px;
+    border: 1px solid #fc592e;
     margin: 12px 20px 11px 20px !important;
-    padding: 10px 20px 10px 20px !important;
+    padding: 10px 20px 12px 20px !important;
     text-align:center;
 }
 .order-button:hover{
