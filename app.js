@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb:http://groovy.id/groovy-web');
+mongoose.connect('mongodb://groovy.id/groovy-web');
 
 var location = require('./routes/location');
 
