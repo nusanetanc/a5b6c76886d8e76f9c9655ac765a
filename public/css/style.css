@@ -1644,6 +1644,10 @@ nav .nav-link:hover{
         text-align:center !important;
     }
     
+    .broadband-fiber-package .price-package{
+        text-align:center !important;
+    }
+    
     .broadband-fiber-package .price-package span{
         text-align:center !important;
     }
