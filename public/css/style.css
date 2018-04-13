@@ -1634,6 +1634,10 @@ nav .nav-link:hover{
     color:#fc592e;
 }
 
+.broadband-fiber-package .price-package{
+    text-align:left !important;
+}
+
 @media (max-width: 991px) { 
     
     .broadband-fiber-package .col-12.col-lg-2{
@@ -1645,10 +1649,6 @@ nav .nav-link:hover{
     }
     
     .broadband-fiber-package .price-package{
-        text-align:center !important;
-    }
-    
-    .broadband-fiber-package .price-package span{
         text-align:center !important;
     }
     
