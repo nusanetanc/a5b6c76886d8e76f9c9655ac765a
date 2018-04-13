@@ -7,7 +7,10 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-mongoose.connect('mongodb://localhost/groovy-web');
+MongoClient.connect('mongodb://localhost:27017/groovy', (err, client) => {
+  // Client returned
+  var db = client.db('groovy');
+});
 
 var location = require('./routes/location');
 
