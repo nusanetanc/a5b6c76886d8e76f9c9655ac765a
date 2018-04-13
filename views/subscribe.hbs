@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#FC592E" />
+    <title>Groovy - Connecting Home</title>
+    <link rel="icon" sizes="192x192" href="https://grry-v-2-nurhandiyudi.c9users.io/images/favicon.png">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Roboto:100,200,300,400,500,700" rel="stylesheet">
+
+
+    <!-- Style css -->
+    <link href="https://grry-v-2-nurhandiyudi.c9users.io/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="groovy-container">
+    
+    <nav class="navbar navbar-expand-lg fixed-top bg-white" style="border-bottom: 1px solid #eee;">
+      <a class="navbar-brand" href="#"><img src="https://grry-v-2-nurhandiyudi.c9users.io/images/logo-groovy.png" alt="logo-groovy" width="120px"/></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://grry-v-2-nurhandiyudi.c9users.io/features" style="font-size:13px;padding: 0.5rem 1rem;">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://grry-v-2-nurhandiyudi.c9users.io/packages" style="font-size:13px;padding: 0.5rem 1rem;">Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://grry-v-2-nurhandiyudi.c9users.io/support" style="font-size:13px;padding: 0.5rem 1rem;">Support</a>
+          </li>
+        </ul>
+        <a href="https://grry-v-2-nurhandiyudi.c9users.io/packages" class="sign-in-button" style="font-size:13px;">SUBSCRIBE NOW</a>
+      </div>
+    </nav>
+    
+    <main>
+        <div class="register-page row justify-content-center m-0" ng-app="">
+            <div class="register-form-wrapper col-12 col-md-6 col-lg-4">
+                <h4 style="text-align:center;margin:2rem 0;">Groovy Online Registration</h4>
+                <form action="/subscribe-now/{{selectpackage}}" method="post">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="coverage" role="tabpanel" aria-labelledby="coverage-tab">
+                            <!--Coverage Area-->
+                            <div class="row multistep justify-content-center" style="margin-bottom:50px;">
+                                <div class="col-xs-4 multistep-step current">
+                                    <div class="text-center multistep-stepname">Coverage Area</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step next">
+                                    <div class="text-center multistep-stepname">Your Detail</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step next">
+                                    <div class="text-center multistep-stepname">Your Order</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="city">Select City :</label>
+                                <select class="form-control" id="city" type="city" name="city" onchange="selectRegion()">
+                                    <option disabled="disabled" selected="selected" value="">Select City</option>
+                                    <option value="Jakarta Utara">Jakarta Utara</option>
+                                    <option value="Jakarta Pusat">Jakarta Pusat</option>
+                                    <option value="Jakarta Selatan">Jakarta Selatan</option>
+                                    <option value="Jakarta Barat">Jakarta Barat</option>
+                                    <option value="Jakarta Timur">Jakarta Timur</option>
+                                </select>
+                            </div>
+                            <div id="type">
+                                <label class="form-control-label" for="type">Tipe - <span style="font-weight:300;">Type</label>
+                                <div id="type" class="form-check">
+                                    <input onclick="javascript:typeCheck();" class="form-check-input" type="radio" id="apartment" name="typeselect" value="apartment">
+                                    <label class="form-control-label" style="font-weight:300;">
+                                        Apartemen / Apartment
+                                    </label>
+                                </div>
+                                <div id="type" class="form-check">
+                                    <input onclick="javascript:typeCheck();" class="form-check-input" type="radio" id="residential" name="typeselect" value="residential">
+                                    <label class="form-control-label" style="font-weight:300;">
+                                        Perumahan / Residential
+                                    </label>
+                                </div> 
+                            </div>
+                            <div id="location-apartment" class="form-group">
+                                <label class="form-control-label" for="Lokasi">Lokasi - <span style="font-weight:300;">Location</span></label>
+                                <select onchange="selectLocationApartment()" class="form-control" id="locationselectapartment" name="locationselectapartment">
+                                    <option disabled="disabled" selected="selected" value="">Select Apartment</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="location-residential" class="form-group">
+                                <label class="form-control-label" for="Lokasi">Lokasi - <span style="font-weight:300;">Location</span></label>
+                                <select onchange="selectLocationResidential()" class="form-control" id="locationselectresidential" name="locationselectresidential">
+                                    <option disabled="disabled" selected="selected" value="">Select Residential</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="tower" class="form-group">
+                                <label class="form-control-label" for="Lokasi">Gedung - <span style="font-weight:300;">Tower</span></label>
+                                <select onchange="selectTower()" class="form-control" id="towerselect" name="towerselect">
+                                    <option disabled="disabled" selected="selected" value="">Select Tower</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="floor" class="form-group">
+                                <label class="form-control-label" for="Lokasi">Lantai - <span style="font-weight:300;">Floor</span></label>
+                                <select onchange="selectFloor()" class="form-control" id="floorselect" name="floorselect">
+                                    <option disabled="disabled" selected="selected" value="">Select Floor</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="unit" class="form-group">
+                                <label class="form-control-label" for="Unit">Unit - <span style="font-weight:300;">Unit</span></label>
+                                <select onchange="selectUnit()" class="form-control" id="unitSelect" name="unitSelect">
+                                    <option disabled="disabled" selected="selected" value="">Select Unit</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="street" class="form-group">
+                                <label class="form-control-label" for="Lokasi">Blok/Jalan - <span style="font-weight:300;">Block/Street</span></label>
+                                <select onchange="selectstreet()" class="form-control" id="blokstreetSelect" name="blokstreetSelect">
+                                    <option disabled="disabled" selected="selected" value="">Select Block/Street</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            <div id="no" class="form-group">
+                                <label class="form-control-label" for="Lokasi">No - <span style="font-weight:300;">No</span></label>
+                                <select onchange="selectno()" class="form-control" id="noSelect" name="noSelect">
+                                    <option disabled="disabled" selected="selected" value="">Select No</option>
+                                    <option value="[Not Coverage]">[Not Coverage]</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group" id="notcoverage">
+                                <p style="font-family:'Roboto';font-size:12px;font-weight:300;margin-top:1rem;"><b>Not covered ?</b> We apologize for your inconvenience.Please input your area in <a href="/subscribe-inquiry-form">here</a>.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="customer-data" role="tabpanel" aria-labelledby="customer-data-tab">
+                            <!--Your Detail-->
+                            <div class="row multistep justify-content-center" style="margin-bottom:50px;">
+                                <div class="col-xs-4 multistep-step complete">
+                                    <div class="text-center multistep-stepname">Coverage Area</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step current">
+                                    <div class="text-center multistep-stepname">Your Detail</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step next">
+                                    <div class="text-center multistep-stepname">Your Order</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fullname">Full Name <span style="color:red;">*</span> :</label>
+                                <input class="form-control" id="fullname" type="text" placeholder="eg: John Doe" name="fullname" ng-model="fullname" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="uploadKTP">National Identity Card (KTP) <span style="color:red;">*</span></label>
+                                <input class="form-control-file" type="file" id="uploadKTP" name="uploadKTP" required/>
+                                <small class="form-text text-muted">Please upload your ID (KTP/Passport) for a faster registration process.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone :</label>
+                                <input class="form-control" id="phone" type="text" placeholder="eg: 021++++++" name="phone" ng-model="phone" />
+                            </div>
+                            <div class="form-group">
+                                <label for="mobilephone">Mobile Phone <span style="color:red;">*</span> :</label>
+                                <input class="form-control" id="mobilephone" type="text" placeholder="eg: 081234++++" name="mobilephone" ng-model="mobilephone" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email <span style="color:red;">*</span> :</label>
+                                <input class="form-control" id="email" type="email" placeholder="eg: johndoe@mail.com" name="email" ng-model="email" required/>
+                                <small class="form-text text-muted" id="emailHelp">Please fill your email address correctly, we will send a confirmation and groovy billing statement to your email address.</small>
+                            </div>
+                        </div>
+                    
+                        <div class="tab-pane fade" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+                            <!--Your Order-->
+                            <div class="row multistep justify-content-center" style="margin-bottom:50px;">
+                                <div class="col-xs-4 multistep-step complete">
+                                    <div class="text-center multistep-stepname">Coverage Area</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step complete">
+                                    <div class="text-center multistep-stepname">Your Detail</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                                <div class="col-xs-4 multistep-step current">
+                                    <div class="text-center multistep-stepname">Your Order</div>
+                                    <div class="progress">
+                                        <div class="progress-bar"></div>
+                                    </div><a class="multistep-dot"></a></div>
+                            </div><br/>
+                            <table class="broadband-fo-register-summary">
+                                <tr>
+                                    <td >Full Name</td>
+                                    <td style="padding-left:1rem;" ng-bind="fullname"></td>
+                                </tr>
+                                <tr>
+                                    <td >Phone</td>
+                                    <td style="padding-left:1rem;" ng-bind="phone"></td>
+                                </tr>
+                                <tr>
+                                    <td >Mobile Phone</td>
+                                    <td style="padding-left:1rem;" ng-bind="mobilephone"></td>
+                                </tr>
+                                <tr>
+                                    <td >Email</td>
+                                    <td style="padding-left:1rem;" ng-bind="email"></td>
+                                </tr>
+                                <tr>
+                                    <td >Package</td>
+                                    <td style="text-transform: capitalize;padding-left:1rem;">Level {{selectpackage}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="nav  justify-content-center" id="myTab" role="tablist" style="margin-bottom:2rem;">
+                        <a class="groovy-button-grey" id="coverage-tab" data-toggle="tab" href="#coverage" role="tab" aria-controls="home">Back</a>
+                        <span>&nbsp; </span>
+                        <a class="groovy-button-grey" id="customer-prev-tab" data-toggle="tab" href="#customer-data" role="tab" aria-controls="customer-data">Back</a>
+                        <span>&nbsp;</span>
+                        <a class="groovy-button" id="customer-data-tab" data-toggle="tab" href="#customer-data" role="tab" aria-controls="customer-data">Next Step</a>
+                        <span>&nbsp; </span>
+                        <a class="groovy-button" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary">Next Step</a>
+                        <span>&nbsp;</span>
+                        <input class="groovy-button" id="registerBroadbandFo" type="submit" value="Confirm" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>  
+    
+    <div class="home-footer">
+        <div class="container home-content">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6">
+                    <p style="line-height:25px;"><span class="home-footer-header-text"><img src="https://grry-v-2-nurhandiyudi.c9users.io/images/groovy.png" alt="" width="120px" style="margin-bottom:15px;"></span><br>
+                        <span class="home-footer-body-text">Best Internet services for homes and apartments with a complete entertainment services, from live TV, video on demand, social TV, catch-up TV and radio streaming.
+                    </p>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
+                    <span class="home-footer-body-text">
+                        <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
+                        <a href="https://twitter.com/groovy_play">Twitter</a><br>
+                        <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
+                    </span></p>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <p style="line-height:25px;"><span class="home-footer-header-text">Features</span><br>
+                        <span class="home-footer-body-text">
+                        <a href="/features#unlimited">Unlimited Internet Access</a><br>
+                        <a href="/features#ftth">Fiber Optic to the Home</a><br>
+                        <a href="/features#free-wifi">Free Public Wifi Account</a><br>
+                        <a href="/features#ip-static">IP Static</a><br>
+                        <a href="/features#helpdesk">Helpdesk 24/7</a><br>
+                    </span></p>
+                </div>
+                <div class="col-xs-6 col-sm-2">
+                    <p style="line-height:25px;"><span class="home-footer-header-text">Groovy</span><br>
+                    <span class="home-footer-body-text">
+                        <a href="about">About</a><br/>
+                        <a href="career">Career</a><br>
+                        <a href="event">Event</a><br>
+                        <a href="contact">Contact</a><br>
+                        <a href="privacy-policy">Privacy Policy</a><br>
+                        <a href="terms-of-use">Terms of Use</a>
+                    </span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-home">
+        <div class="container footer-home-text">
+            <p style="margin: 6px 0 10px;opacity:0.7">Copyright 2017 Groovy. All Right Reserved.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://grry-v-2-nurhandiyudi.c9users.io/js/script.js"></script>
+<script src="https://grry-v-2-nurhandiyudi.c9users.io/js/subscribe.js"></script>
+</body>
+</html>

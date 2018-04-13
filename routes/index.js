@@ -3,23 +3,123 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('homepage', { title: 'Home - Groovy' });
+  res.render('homepage', { title: 'Groovy - Home' });
 });
 
 router.get('/features', function(req, res, next) {
-  res.render('features', { title: 'Features - Groovy' });
+  res.render('features', { title: 'Groovy - Features' });
 });
 
 router.get('/packages', function(req, res, next) {
-  res.render('packages', { title: 'Packages - Groovy' });
+  res.render('packages', { title: 'Groovy - Packages' });
 });
 
 router.get('/support', function(req, res, next) {
-  res.render('support', { title: 'Support - Groovy' });
+  res.render('support', { title: 'Groovy - Support' });
 });
 
 router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact - Groovy' });
+  res.render('contact', { title: 'Groovy - Contact' });
+});
+
+router.get('/subscribe-now/:package', function(req, res, next) {
+    res.render('subscribe', { title: 'Groovy - Subscribe', selectpackage: req.params.package });
+});
+
+router.get('/subscribe-now/:package/location-promo/:location/:contract', function(req, res, next) {
+  if(req.params.location = '68fe3a248c3adb714f407aa275bc0e2f'){
+    var location = 'Perumahan Permata Gading'
+  } else{
+    var location = 'Error'
+  }
+  if(req.params.package = '1'){
+    var price = '349.000'
+    if(req.params.contract = '1'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '500.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '2'){
+    var price = '449.000'
+    if(req.params.contract = '1'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '500.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '3'){
+    var price = '649.000'
+    if(req.params.contract = '1'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '500.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '4'){
+    var price = '999.000'
+    if(req.params.contract = '1'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '500.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '5'){
+    var price = '2.890.000'
+    if(req.params.contract = '1'){
+      var instalfee = '2.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '6'){
+    var price = '4.690.000'
+    if(req.params.contract = '1'){
+      var instalfee = '2.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else if (req.params.package = '7'){
+    var price = '5.690.000'
+    if(req.params.contract = '1'){
+      var instalfee = '2.000.000'
+    } else if (req.params.contract = '3'){
+      var instalfee = '1.000.000'
+    } else if (req.params.contract = '6'){
+      var instalfee = '0.000 - Free'
+    } else {
+      var instalfee = 'Error'
+    }
+  } else {
+    var price = 'Error'
+    var instalfee = 'Error'
+  }
+  
+  
+    res.render('subscribe-location-promo', { title: 'Groovy - Subscribe', selectpackage: req.params.package, location: 'Elang Laut' , contract: req.params.contract, price: price, instalfee: instalfee, location:location });
+});
+
+router.get('/subscribe-done', function(req, res, next) {
+    res.render('subscribe-done', { title: 'Groovy - Subscribe Done' });
 });
 
 
