@@ -1,5 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var api = express.Router();
+var nodemailer = require("nodemailer");
+var flash = require('express-flash');
+var Register = require('../models/register');
+var path = require("path");
+
+var smtpTransport = nodemailer.createTransport({
+    host: "mail.groovy.id",
+    auth: {
+        user: "website@groovy.id",
+        pass: "!groovy!2018"
+    }
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -138,6 +151,193 @@ router.get('/9085f97251027575d6fe5f69ed34ce2ef0c5634d539f03255a78a67d52525a43', 
 });
 router.get('/ab86e4f114cb4043cac70b3f2af12f61434962087c477da92c8132ffad43cf51', function(req, res, next) {
   res.render('index', { title: 'Lokasi5' });
+});
+
+// Add Submit POST Route
+router.post('/subscribe-now/:selectpackage', function(req, res){
+  //req.checkBody('fullname','Full Name is required').notEmpty();
+  //req.checkBody('mobilephone','Mobile Phone is required').notEmpty();
+ // req.checkBody('email','Email is required').notEmpty();
+
+  // Get Errors
+  //let errors = req.validationErrors();
+  //if(errors){
+    //res.render('register-broadband-fiber-optic2', {
+     // title:'Registration - Nusanet Jakarta',
+     // errors:errors,
+     // selectpackage: req.params.selectpackage
+   // });
+ // } else {
+ /*
+ console.log(req.body.fullname)
+    let fullName = req.body.fullname;
+    if (req.files.uploadKTP == undefined || req.files.uploadKTP == '' ){
+      console.log("no ktp uploaded")
+    }else {
+      let ktpFile = req.files.uploadKTP;
+      // Use the mv() method to place the file somewhere on your server
+      ktpFile.mv('./uploads/'+fullName+'.jpg', function(err) {
+        if (err)
+          return res.status(500).send(err);
+     
+        console.log('KTP upload succesfully');
+      });
+    } */ 
+    //var fileKtp = req.files.uploadKTP
+    //var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
+    if (!req.body.locationselectapartment){
+      var loc = req.body.locationselectresidential;
+      var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
+    } else if (!req.body.locationselectresidential){
+      var loc = req.body.locationselectapartment;
+      var detloc = req.body.towerselect+', Floor. '+req.body.floorselect+', Unit. '+req.body.unitSelect;
+    }
+    var mailOptions={
+      to: "nurhandiy@gmail.com",
+      subject : "Web Registration Groovy",
+      html : `
+        <h5>Dear All</h5>
+        <h6>Berikut Customer Registrasi Groovy Online<br/>
+        Nama: `+req.body.fullname+`<br/>
+        Email: `+req.body.email+`<br/>
+        mobilephone: `+req.body.mobilephone+`<br/>
+        phone: `+req.body.phone+`<br/>
+        packages: `+req.params.selectpackage+`<br/>
+        place: `+loc+` - `+req.body.city+`<br/>
+        detail place: `+detloc+`<br/>
+        KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
+        Terimaksih`
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+        console.log(error);
+        req.flash('result','Sorry Mail Server Error, Please Try Again');
+        res.redirect('/subscribe-done');
+      }else{
+        var register = new Register({
+        fullname: req.body.fullname,
+        email: req.body.email,
+        mobilephone : req.body.mobilephone,
+        phone : req.body.phone,
+        package : req.params.selectpackage,
+        place : req.body.city+' - '+req.body.districs+' - '+req.body.villages+' - '+req.body.streets+' - '+req.body.streetnos,
+        ktpurl : './uploads/'+req.body.fullname+'.jpg'
+      })
+      register.save(function(err, result) {
+        console.log(err)
+        console.log(result)
+        console.log("Message sent: " + response.message);
+        req.flash('result','Thank You For Registration, We will Contact you');
+        res.redirect('/subscribe-done');
+      });
+      } 
+    });
+//  }
+});
+
+// Add Submit POST Route
+router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(req, res){
+  //req.checkBody('fullname','Full Name is required').notEmpty();
+  //req.checkBody('mobilephone','Mobile Phone is required').notEmpty();
+ // req.checkBody('email','Email is required').notEmpty();
+
+  // Get Errors
+  //let errors = req.validationErrors();
+  //if(errors){
+    //res.render('register-broadband-fiber-optic2', {
+     // title:'Registration - Nusanet Jakarta',
+     // errors:errors,
+     // selectpackage: req.params.selectpackage
+   // });
+ // } else {
+ /*
+ console.log(req.body.fullname)
+    let fullName = req.body.fullname;
+    if (req.files.uploadKTP == undefined || req.files.uploadKTP == '' ){
+      console.log("no ktp uploaded")
+    }else {
+      let ktpFile = req.files.uploadKTP;
+      // Use the mv() method to place the file somewhere on your server
+      ktpFile.mv('./uploads/'+fullName+'.jpg', function(err) {
+        if (err)
+          return res.status(500).send(err);
+     
+        console.log('KTP upload succesfully');
+      });
+    } */ 
+    //var fileKtp = req.files.uploadKTP
+    //var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
+      var loc = req.body.locationselectresidential;
+      var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
+    var mailOptions={
+      to: "nurhandiy@gmail.com",
+      subject : "Web Registration Groovy",
+      html : `
+        <h5>Dear All</h5>
+        <h6>Berikut Customer Registrasi Groovy Online<br/>
+        Nama: `+req.body.fullname+`<br/>
+        Email: `+req.body.email+`<br/>
+        mobilephone: `+req.body.mobilephone+`<br/>
+        phone: `+req.body.phone+`<br/>
+        packages: Level `+req.params.selectpackage+`<br/>
+        contract: `+req.params.contract+` month<br/>
+        place: `+loc+`<br/>
+        detail place: `+detloc+`<br/>
+        KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
+        Terimaksih`
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+        console.log(error);
+        req.flash('result','Sorry Mail Server Error, Please Try Again');
+        res.redirect('/subscribe-done');
+      }else{
+        var register = new Register({
+        fullname: req.body.fullname,
+        email: req.body.email,
+        mobilephone : req.body.mobilephone,
+        phone : req.body.phone,
+        package : req.params.selectpackage,
+        place : req.body.city+' - '+req.body.districs+' - '+req.body.villages+' - '+req.body.streets+' - '+req.body.streetnos,
+        ktpurl : './uploads/'+req.body.fullname+'.jpg'
+      })
+      register.save(function(err, result) {
+        console.log(err)
+        console.log(result)
+        console.log("Message sent: " + response.message);
+        req.flash('result','Thank You For Registration, We will Contact you');
+        res.redirect('/subscribe-done');
+      });
+      } 
+    });
+//  }
+});
+
+router.post('/contact', function(req, res){
+  var mailOptions={
+      to: "nurhandiy@gmail.com",
+      subject : "Web Contact Groovy",
+      html : `
+        <h5>Dear All</h5>
+        <h6>Berikut dari contact us website groovy<br/>
+        Nama: `+req.body.name+`<br/>
+        Email: `+req.body.email+`<br/>
+        Message: `+req.body.message+`<br/>
+        Terimaksih`
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+        console.log(error);
+        req.flash('result','Sorry Submit Contact Us Failed, Please Try Again');
+        res.redirect('/contact');
+      }else{
+        req.flash('result','Message Contact Send');
+        res.redirect('/contact');
+      }
+    });      
 });
 
 module.exports = router;
