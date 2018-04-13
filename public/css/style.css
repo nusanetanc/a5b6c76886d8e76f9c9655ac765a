@@ -14,6 +14,11 @@ body{
     margin:0 auto;
 }
 
+.fixed-top {
+    max-width: 1440px !important;
+    margin: 0 auto !important;
+}
+
 .hoverable{transition:box-shadow .2s;box-shadow: 8px 10px 20px 0px rgba(46,61,73,0.15)}.hoverable:hover{transition:box-shadow .2s;box-shadow:2px 2px 8px 0 rgba(46,61,73,.4)}.hoverable:active{transition:box-shadow .2s;box-shadow:0 0 0 0 transparent}
 /*------------------------Navbar----------------------------*/
 .navbar-homepage{
