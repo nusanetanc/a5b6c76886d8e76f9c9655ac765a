@@ -1660,3 +1660,15 @@ nav .nav-link:hover{
     }
     
 }
+
+.partner-img{
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    transition:0.1s;
+}
+
+.partner-img:hover{
+    -webkit-filter: none; /* Safari 6.0 - 9.0 */
+    filter: none;
+    transition:0.1s;
+}
