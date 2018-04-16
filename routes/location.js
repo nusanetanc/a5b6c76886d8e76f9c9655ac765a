@@ -106,7 +106,7 @@ router.post('/nostreets', function(req, res, next) {
     nostreets.residentials= req.body.residentials;
     nostreets.name= req.body.name;
     nostreets.nos= req.body.nos;
-
+    nostreets.homepass= req.body.homepass;
     nostreets.save(function(err) {
       if (err)
         res.send(err);
