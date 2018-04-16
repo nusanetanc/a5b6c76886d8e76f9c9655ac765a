@@ -35,6 +35,10 @@ router.get('/contact', function(req, res, next) {
   res.render('contact', { title: 'Groovy - Contact' });
 });
 
+router.get('/about-us', function(req, res, next) {
+  res.render('about', { title: 'Groovy - About Us' });
+});
+
 router.get('/subscribe-now/:package', function(req, res, next) {
     res.render('subscribe', { title: 'Groovy - Subscribe', selectpackage: req.params.package });
 });
