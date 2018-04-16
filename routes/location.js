@@ -51,13 +51,6 @@ router.get('/streets/:residentials', function(req, res, next) {
 });
 
 /* GET location listing. */
-router.delete('/streets', function(req, res, next) {
-    Streets.remove( function(err, streets) {
-      res.send(streets);
-   });
-});
-
-/* GET location listing. */
 router.get('/nostreets/:name', function(req, res, next) {
     NoStreets.find({name: req.params.name}, { nos: 1, _id: 0},  function(err, nostreets) {
         res.send(nostreets);
