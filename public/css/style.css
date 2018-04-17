@@ -1672,3 +1672,11 @@ nav .nav-link:hover{
     filter: none;
     transition:0.1s;
 }
+
+.nav-pills .nav-link.active{
+    background-color:#fc592e !important;
+}
+
+a{
+    color:#fc592e !important;
+}
