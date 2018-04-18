@@ -315,7 +315,7 @@ body{
 }
 
 .home-footer-body-text > a {
-    color: white;
+    color: #fff !important;
 }
 
 .home-footer-body-text > a:hover {
@@ -1673,11 +1673,11 @@ nav .nav-link:hover{
     transition:0.1s;
 }
 
-.nav-pills .nav-link.active{
+.about-link.active{
     color:#fff !important;
     background-color:#fc592e !important;
 }
 
-a{
-    color:#fc592e !important;
+.about-link{
+    color:#fff !importants;
 }
