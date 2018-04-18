@@ -50,7 +50,7 @@ function typeCheck() {
         $("#street").hide();
         var selectedArr = (document.getElementById("city").value);
         var locations = document.getElementById('locationselectapartment');
-        $.getJSON("groovy.id/location/apartemens/"+selectedArr, function(json){
+        $.getJSON("http://groovy.id/location/apartemens/"+selectedArr, function(json){
             var arrLocation = json;
             arrLocation.forEach(Locationfunc);
         });
@@ -77,7 +77,7 @@ function typeCheck() {
         $("#street").hide();
       var selectedArr = (document.getElementById("city").value);
       var locations = document.getElementById('locationselectresidential');
-      $.getJSON("groovy.id/location/residentials/"+selectedArr, function(json){
+      $.getJSON("http://groovy.id/location/residentials/"+selectedArr, function(json){
           var arrLocation = json;
           arrLocation.forEach(Locationfunc);
       });
@@ -109,7 +109,7 @@ function selectLocationResidential() {
       $("#street").hide();
       $("#type").show(); 
   } else {
-    $.getJSON("groovy.id/location/streets/"+selectedArr, function(json){
+    $.getJSON("http://groovy.id/location/streets/"+selectedArr, function(json){
         var arrLocation = json;
         arrLocation.forEach(Locationfunc);
     });
@@ -154,7 +154,7 @@ function selectstreet() {
     $("#street").show();
     $("#type").show(); 
   } else {
-  $.getJSON("groovy.id/location/nostreets/"+selectedArr, function(json){
+  $.getJSON("http://groovy.id/location/nostreets/"+selectedArr, function(json){
       var arrLocation = json;
       console.log(json)
       arrLocation.forEach(Locationfunc);
@@ -234,7 +234,7 @@ function selectLocationApartment() {
     $("#type").show();
   } else {
     var locations = document.getElementById('towerselect');
-    $.getJSON("groovy.id/location/towers/"+selectedArr, function(json){
+    $.getJSON("http://groovy.id/location/towers/"+selectedArr, function(json){
         var arrLocation = json;
         arrLocation.forEach(Locationfunc);
     });
@@ -279,7 +279,7 @@ var selectedArr = (document.getElementById("towerselect").value);
     $("#type").show();
   }else{
 var locations = document.getElementById('floorselect');
-  $.getJSON("groovy.id/location/floors/"+selectedArr, function(json){
+  $.getJSON("http://groovy.id/location/floors/"+selectedArr, function(json){
       var arrLocation = json;
       arrLocation.forEach(Locationfunc);
   });
@@ -324,7 +324,7 @@ var selectedArr = (document.getElementById("floorselect").value);
     $("#type").show(); 
   }else {
 var locations = document.getElementById('unitSelect');
-  $.getJSON("groovy.id/location/units/"+selectedArr, function(json){
+  $.getJSON("http://groovy.id/location/units/"+selectedArr, function(json){
       var arrLocation = json;
       arrLocation.forEach(Locationfunc);
   });
