@@ -223,7 +223,12 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
         place: `+loc+` - `+req.body.city+`<br/>
         detail place: `+detloc+`<br/>
         KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
-        Terimaksih`
+        Terimaksih` ,
+        attachments: [{
+        filename: req.body.fullname+'.png',
+        path: './uploads/'+fullName+'.jpg',
+        cid: 'kartuidentitas'
+      }] 
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
