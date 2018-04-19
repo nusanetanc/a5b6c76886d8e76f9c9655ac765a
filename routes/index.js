@@ -144,7 +144,7 @@ router.get('/subscribe-done/:result', function(req, res, next) {
 });
 
 
-/* Promo Flyer. */
+/* Promo Flyer. 
 //Promo Location 1 http://bit.ly/2qti6O6
 router.get('/864c445f0bd5c26cb3dbbaa08a82c850daaaa70f6a362cb1f0fd72be18810a51', function(req, res, next) {
   res.render('index', { title: 'Loc.1' });
@@ -169,6 +169,7 @@ router.get('/9085f97251027575d6fe5f69ed34ce2ef0c5634d539f03255a78a67d52525a43', 
 router.get('/ab86e4f114cb4043cac70b3f2af12f61434962087c477da92c8132ffad43cf51', function(req, res, next) {
   res.render('index', { title: 'Loc.5' });
 });
+*/
 
 // Add Submit POST Route
 router.post('/subscribe-now/:selectpackage', function(req, res){
