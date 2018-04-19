@@ -139,8 +139,8 @@ router.get('/subscribe-now/:package/location-promo/:location/:contract', functio
     res.render('subscribe-location-promo', { title: 'Groovy - Subscribe', selectpackage: req.params.package, location: 'Elang Laut' , contract: req.params.contract, price: price, instalfee: instalfee, location:location });
 });
 
-router.get('/subscribe-done', function(req, res, next) {
-    res.render('subscribe-done', { title: 'Groovy - Subscribe Done' });
+router.get('/subscribe-done/:result', function(req, res, next) {
+    res.render('subscribe-done', { title: 'Groovy - Subscribe Done', result:req.params.result });
 });
 
 
@@ -229,8 +229,7 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
       smtpTransport.sendMail(mailOptions, function(error, response){
       if(error){
         console.log(error);
-        req.flash('result','Sorry Mail Server Error, Please Try Again');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Sorry Mail Server Error, Please Try Again');
       }else{
         var register = new Register({
         fullname: req.body.fullname,
@@ -245,8 +244,7 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
         console.log(err)
         console.log(result)
         console.log("Message sent: " + response.message);
-        req.flash('result','Thank You For Registration, We will Contact you');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Thank You For Registration, We will Contact you');
       });
       } 
     });
@@ -308,8 +306,7 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
       smtpTransport.sendMail(mailOptions, function(error, response){
       if(error){
         console.log(error);
-        req.flash('result','Sorry Mail Server Error, Please Try Again');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Sorry Mail Server Error, Please Try Again');
       }else{
         var register = new Register({
         fullname: req.body.fullname,
@@ -324,8 +321,7 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
         console.log(err)
         console.log(result)
         console.log("Message sent: " + response.message);
-        req.flash('result','Thank You For Registration, We will Contact you');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Thank You For Registration, We will Contact you');
       });
       } 
     });
@@ -377,11 +373,9 @@ router.post('/groovy-online-registration/inquiry-form', function(req, res){
       smtpTransport.sendMail(mailOptions, function(error, response){
       if(error){
         console.log(error);
-        req.flash('result','Sorry Submit Inquiry Failed, Please Try Again');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Sorry Submit Inquiry Failed, Please Try Again');
       }else{
-        req.flash('result','Your request you have received,we will call back if the service is ready');
-        res.redirect('/subscribe-done');
+        res.redirect('/subscribe-done/Your request you have received,we will call back if the service is ready');
       }
     });      
 });
