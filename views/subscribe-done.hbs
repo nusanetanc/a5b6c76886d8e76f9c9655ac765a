@@ -1,9 +1,11 @@
 <main style="height:100vh;">
     <div class="container">
-        <div class="row justify-content-center" style="padding:7rem 0 !important;">
-            <div class="col-6 text-center">
+        <div class="row" style="padding:7rem 0 !important;height:100%;">
+            <div class="col-6 align-self-center text-center">
                 <h3 style="letter-spacing: 0.4px;line-height: 1.2;font-weight: 700;font-size: 40px;margin-top: 0px;color: rgb(94, 99, 105);">THANK YOU</h3>
-                <span style="font-size: 15px;color: rgb(159, 163, 169);">adasdsa fssdfas afdsfdsf</span>
+                {{#if message}}
+                <span style="font-size: 15px;color: rgb(159, 163, 169);">{{message}}</span>
+                {{/if}}
             </div>
         </div>
     </div>
