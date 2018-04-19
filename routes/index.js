@@ -200,8 +200,8 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
         console.log('KTP upload succesfully');
       });
     } */ 
-    //var fileKtp = req.files.uploadKTP
-    //var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
+    var fileKtp = req.files.uploadKTP
+    var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
     if (!req.body.locationselectapartment){
       var loc = req.body.locationselectresidential;
       var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
