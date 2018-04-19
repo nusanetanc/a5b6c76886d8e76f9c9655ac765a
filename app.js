@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var flash = require('express-flash');
@@ -29,6 +30,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Express Session Middleware
+app.use(session({
+  secret: '3MEF4WHhWRlVpT2s',
+  resave: true,
+  saveUninitialized: true
+}));
 
 // Express Messages Middleware
 app.use(require('connect-flash')());
