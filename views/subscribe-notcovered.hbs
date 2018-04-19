@@ -1,153 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#FC592E" />
-    <title>Groovy - Connecting Home</title>
-    <link rel="icon" sizes="192x192" href="https://grry-v-2-nurhandiyudi.c9users.io/images/favicon.png">
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Roboto:100,200,300,400,500,700" rel="stylesheet">
-
-
-    <!-- Style css -->
-    <link href="http://groovy.id/css/style.css" rel="stylesheet">
-</head>
-<body>
-<div class="groovy-container">
-    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#"><img src="http://groovy.id/images/logo-groovy.png" alt="logo-groovy" width="120px"/></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="http://groovy.id/features" style="font-size:13px;padding: 0.5rem 1rem;">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://groovy.id/packages" style="font-size:13px;padding: 0.5rem 1rem;">Packages</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://groovy.id/support" style="font-size:13px;padding: 0.5rem 1rem;">Support</a>
-          </li>
-        </ul>
-        <a href="http://groovy.id/packages" class="sign-in-button" style="font-size:13px;">SUBSCRIBE NOW</a>
-      </div>
-    </nav>
-    
-    <main>
-        <form id="regForm" method="post" action="/groovy-online-registration/inquiry-form">
-            <div class="main-content registration-content grey-background">
-                <div class="container">
-                    <div class="content-des text-center">
-                        <h4 style="color:#333;font-family:'Roboto';font-weight:300;margin-bottom:1rem;">Formulir Inquiry Online Registeration Groovy</h4>
-                    </div>
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="full-name">Nama Lengkap - <span style="font-weight:300;">Full Name</span></label><input class="form-control" id="fullname" type="text" name="fullname" required="required" /></div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="mobile-number">No. HP - <span style="font-weight:300;">Mobile Number</span></label><input class="form-control" id="mobilenumber" type="text" name="mobilenumber" required="required" /></div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="email-addr">Email - <span style="font-weight:300;">Email Address</span></label><input class="form-control" id="emailaddr" type="text" name="emailaddr" required="required" /></div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="city">Kota - <span style="font-weight:300;">City</span></label><input class="form-control" id="city" type="text" name="city" required="required" /></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="location">Lokasi - <span style="font-weight:300;">Location</span></label><input class="form-control" id="location" type="text" name="location" required="required" /></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="detail">Detail - <span style="font-weight:300;">Detail</span></label><textarea class="form-control" id="detail" name="detail" rows="3"></textarea></div>
-                        </div>
-                    </div>
-                    
-                    <div class="row justify-content-center ">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <div class="form-group"><label class="form-control-label" for="addtional">Tambahan - <span style="font-weight:300;">Additional</span></label><textarea class="form-control" id="addtional" name="addtional" rows="3"></textarea></div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center" style="margin:1rem 0;">
-                        <div class="col-12 col-md-6 col-lg-5 text-center"><input class="groovy-button hoverable" id="submit" type="submit" value="SUBMIT" /></div>
+<main>
+    <form id="regForm" method="post" action="/groovy-online-registration/inquiry-form">
+        <div class="main-content registration-content grey-background">
+            <div class="container">
+                <div class="content-des text-center">
+                    <h4 style="color:#333;font-family:'Roboto';font-weight:300;margin-bottom:1rem;">Formulir Inquiry Online Registeration Groovy</h4>
+                </div>
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="full-name">Nama Lengkap - <span style="font-weight:300;">Full Name</span></label><input class="form-control" id="fullname" type="text" name="fullname" required="required" /></div>
                     </div>
                 </div>
-            </div>
-        </form>
-    </main> 
-    
-    <div class="home-footer">
-        <div class="container home-content">
-            <div class="row">
-                <div class="col-xs-6 col-sm-6">
-                    <p style="line-height:25px;"><span class="home-footer-header-text"><img src="https://grry-v-2-nurhandiyudi.c9users.io/images/groovy.png" alt="" width="120px" style="margin-bottom:15px;"></span><br>
-                        <span class="home-footer-body-text">Best Internet services for homes and apartments with a complete entertainment services, from live TV, video on demand, social TV, catch-up TV and radio streaming.
-                    </p>
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="mobile-number">No. HP - <span style="font-weight:300;">Mobile Number</span></label><input class="form-control" id="mobilenumber" type="text" name="mobilenumber" required="required" /></div>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-2">
-                    <p style="line-height:25px;"><span class="home-footer-header-text">Stay Connected</span><br>
-                    <span class="home-footer-body-text">
-                        <a href="https://www.facebook.com/groovyplay">Facebook</a><br>
-                        <a href="https://twitter.com/groovy_play">Twitter</a><br>
-                        <a href="https://www.instagram.com/groovy_play/">Instagram</a><br>
-                    </span></p>
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="email-addr">Email - <span style="font-weight:300;">Email Address</span></label><input class="form-control" id="emailaddr" type="text" name="emailaddr" required="required" /></div>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-2">
-                    <p style="line-height:25px;"><span class="home-footer-header-text">Features</span><br>
-                        <span class="home-footer-body-text">
-                        <a href="/features#unlimited">Unlimited Internet Access</a><br>
-                        <a href="/features#ftth">Fiber Optic to the Home</a><br>
-                        <a href="/features#free-wifi">Free Public Wifi Account</a><br>
-                        <a href="/features#ip-static">IP Static</a><br>
-                        <a href="/features#helpdesk">Helpdesk 24/7</a><br>
-                    </span></p>
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="city">Kota - <span style="font-weight:300;">City</span></label><input class="form-control" id="city" type="text" name="city" required="required" /></div>
+                    </div>
                 </div>
-                <div class="col-xs-6 col-sm-2">
-                    <p style="line-height:25px;"><span class="home-footer-header-text">Groovy</span><br>
-                    <span class="home-footer-body-text">
-                        <a href="about">About</a><br/>
-                        <a href="career">Career</a><br>
-                        <a href="event">Event</a><br>
-                        <a href="contact">Contact</a><br>
-                        <a href="privacy-policy">Privacy Policy</a><br>
-                        <a href="terms-of-use">Terms of Use</a>
-                    </span></p>
+                
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="location">Lokasi - <span style="font-weight:300;">Location</span></label><input class="form-control" id="location" type="text" name="location" required="required" /></div>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="detail">Detail - <span style="font-weight:300;">Detail</span></label><textarea class="form-control" id="detail" name="detail" rows="3"></textarea></div>
+                    </div>
+                </div>
+                
+                <div class="row justify-content-center ">
+                    <div class="col-12 col-md-6 col-lg-5">
+                        <div class="form-group"><label class="form-control-label" for="addtional">Tambahan - <span style="font-weight:300;">Additional</span></label><textarea class="form-control" id="addtional" name="addtional" rows="3"></textarea></div>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="margin:1rem 0;">
+                    <div class="col-12 col-md-6 col-lg-5 text-center"><input class="groovy-button hoverable" id="submit" type="submit" value="SUBMIT" /></div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer-home">
-        <div class="container footer-home-text">
-            <p style="margin: 6px 0 10px;opacity:0.7">Copyright 2017 Groovy. All Right Reserved.</p>
-        </div>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script src="https://grry-v-2-nurhandiyudi.c9users.io/js/script.js"></script>
-<script src="https://grry-v-2-nurhandiyudi.c9users.io/js/subscribe.js"></script>
-</body>
-</html>
+    </form>
+</main>
