@@ -1,9 +1,10 @@
 <main style="height:100vh;">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="padding:7rem 0">
             <div class="col-6 text-center">
+                {{#if message}}
                 <h3 style="letter-spacing: 0.4px;line-height: 1.2;font-weight: 700;font-size: 40px;margin-top: 0px;color: rgb(94, 99, 105);">THANK YOU</h3>
-                <span style="font-size: 15px;color: rgb(159, 163, 169);">Success input data inquery</span>
+                <span style="font-size: 15px;color: rgb(159, 163, 169);">{{message}}</span>
             </div>
         </div>
     </div>
