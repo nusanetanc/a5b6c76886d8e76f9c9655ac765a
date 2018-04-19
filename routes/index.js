@@ -23,6 +23,10 @@ router.get('/features', function(req, res, next) {
   res.render('features', { title: 'Groovy - Features' });
 });
 
+router.get('/subscribe-inquiry-form', function(req, res, next) {
+  res.render('subscribe-notcovered', { title: 'Groovy - Inquiry Form' });
+});
+
 router.get('/packages', function(req, res, next) {
   res.render('packages', { title: 'Groovy - Packages' });
 });
