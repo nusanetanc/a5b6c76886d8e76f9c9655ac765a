@@ -200,8 +200,19 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
         console.log('KTP upload succesfully');
       });
     } */ 
-    var fileKtp = req.files.uploadKTP
-    var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
+    let ktpFile = req.files.uploadKTP;
+    let fullName = req.body.fullname;
+    if (ktpFile == undefined ){
+      console.log("no ktp uploaded")
+    }else {
+      // Use the mv() method to place the file somewhere on your server
+      ktpFile.mv('./uploads/'+fullName+'.jpg', function(err) {
+        if (err)
+          return res.status(500).send(err);
+     
+        console.log('KTP upload succesfully');
+      });
+    }
     if (!req.body.locationselectapartment){
       var loc = req.body.locationselectresidential;
       var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
