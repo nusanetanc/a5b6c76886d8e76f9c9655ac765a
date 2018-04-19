@@ -7,10 +7,10 @@ var Register = require('../models/register');
 var path = require("path");
 
 var smtpTransport = nodemailer.createTransport({
-    host: "mail.groovy.id",
+    service: "gmail",
     auth: {
-        user: "website@groovy.id",
-        pass: "!groovy!2018"
+        user: "web.groovyplay",
+        pass: "groovyplay"
     }
 });
 
@@ -353,6 +353,35 @@ router.post('/contact', function(req, res){
       }else{
         req.flash('result','Message Contact Send');
         res.redirect('/contact');
+      }
+    });      
+});
+
+router.post('/groovy-online-registration/inquiry-form', function(req, res){
+  var mailOptions={
+      to: "nurhandiy@gmail.com",
+      subject : "Web inquiry form (Form Permintaan Tidak Tercover) Groovy",
+      html : `
+        <h5>Dear All</h5>
+        <h6>Berikut dari inquiry form (Form Permintaan Tidak Tercover) website groovy<br/>
+        Nama: `+req.body.fullname+`<br/>
+        Mobile Number: `+req.body.mobilenumber+`<br/>
+        Email: `+req.body.emailaddr+`<br/>
+        City: `+req.body.city+`<br/>
+        Location: `+req.body.location+`<br/>
+        Detail Location: `+req.body.detail+`<br/>
+        Additional: `+req.body.addtional+`<br/>
+        Terimaksih`
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+        console.log(error);
+        req.flash('result','Sorry Submit Inquiry Failed, Please Try Again');
+        res.redirect('/subscribe-done');
+      }else{
+        req.flash('result','Your request you have received,we will call back if the service is ready');
+        res.redirect('/subscribe-done');
       }
     });      
 });
