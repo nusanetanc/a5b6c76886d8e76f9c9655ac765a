@@ -1,4 +1,4 @@
-function Onload() {
+function Load() {
   //coverage area
   $("#location-residential").hide();
   $("#location-apartment").hide();
@@ -16,7 +16,7 @@ function Onload() {
   $("#customer-prev-tab").hide();
   $("#registerBroadbandFo").hide();
 }
-window.onload = Onload;
+window.onload = Load;
 //select city
 function selectRegion() {
     $("#coverage-tab").hide();
