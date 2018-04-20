@@ -430,4 +430,48 @@ router.post('/groovy-online-registration/inquiry-form', function(req, res){
     });      
 });
 
+router.post('/payment-confirm', function(req, res){
+  
+  let ktpFile = req.files.photoPayConfirm;
+    let noInvoicePayConfirm = req.body.noInvoicePayConfirm;
+    if (ktpFile == undefined ){
+      console.log("no ktp uploaded")
+    }else {
+      // Use the mv() method to place the file somewhere on your server
+      ktpFile.mv('./proofpayment/'+noInvoicePayConfirm+'.jpg', function(err) {
+        if (err)
+          return res.status(500).send(err);
+     
+        console.log('Photo upload succesfully');
+      });
+    }
+  var mailOptions={
+      to: "yudi.nurhandi@nusa.net.id, rifki@nusa.net.id",
+      subject : "Konfirmasi Pembayaran",
+      html : `
+        <h5>Dear All</h5>
+        <h6>Berikut konfirmasi pembayaran groovy<br/>
+        Id Customer: `+req.body.idPayConfirm+`<br/>
+        No Invoice: `+req.body.noInvoicePayConfirm+`<br/>
+        Bukti Pembayaran: <br/>
+        Terimaksih`,
+          attachments: [{
+          filename: req.body.noInvoicePayConfirm+'.png',
+          path: './proofpayment/'+noInvoicePayConfirm+'.jpg',
+          cid: 'kartuidentitas'
+        }] 
+      }
+      console.log(mailOptions);
+      smtpTransport.sendMail(mailOptions, function(error, response){
+      if(error){
+        console.log(error);
+        req.flash('result','Sorry Submit Contact Us Failed, Please Try Again');
+        res.redirect('/contact');
+      }else{
+        req.flash('result','Message Contact Send');
+        res.redirect('/contact');
+      }
+    });      
+});
+
 module.exports = router;
