@@ -433,6 +433,7 @@ $(document).ready(function() {
     $("#customer-prev-tab").hide();
     $("#registerBroadbandFo").hide();
   });
+  
   $("#coverage-tab").click(function(){
     $("#coverage-tab").hide();
     $("#customer-data-tab").show();
