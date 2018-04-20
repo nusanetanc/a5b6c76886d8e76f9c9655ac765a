@@ -424,7 +424,6 @@ $('#email').bind('input', function() {
   }
 });
 
-$(document).ready(function() {
 // button tab
   $("#customer-data-tab").click(function(){
     $("#coverage-tab").show();
@@ -457,5 +456,3 @@ $(document).ready(function() {
     $("#customer-prev-tab").hide();
     $("#registerBroadbandFo").hide();
   });
-
-});
