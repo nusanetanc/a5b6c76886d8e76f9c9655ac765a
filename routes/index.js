@@ -327,7 +327,7 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
       var loc = req.body.locationselectresidential;
       var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
     var mailOptions={
-      to: "nurhandiy@gmail.com",
+      to: "cs@groovy.id, billing@groovy.id, yudi.nurhandi@nusa.net.id",
       subject : "Web Registration Groovy",
       html : `
         <h5>Dear All</h5>
@@ -376,7 +376,7 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
 
 router.post('/contact', function(req, res){
   var mailOptions={
-      to: "nurhandiy@gmail.com",
+      to: "cs@groovy.id, billing@groovy.id, yudi.nurhandi@nusa.net.id",
       subject : "Web Contact Groovy",
       html : `
         <h5>Dear All</h5>
@@ -401,7 +401,7 @@ router.post('/contact', function(req, res){
 
 router.post('/groovy-online-registration/inquiry-form', function(req, res){
   var mailOptions={
-      to: "yudi.nurhandi@nusa.net.id, nurhandiy@gmail.com",
+      to: "cs@groovy.id, billing@groovy.id, yudi.nurhandi@nusa.net.id",
       subject : "Web inquiry form (Form Permintaan Tidak Tercover) Groovy",
       html : `
         <h5>Dear All</h5>
