@@ -446,7 +446,7 @@ router.post('/payment-confirm', function(req, res){
       });
     }
   var mailOptions={
-      to: "rifki@nusa.net.id",
+      to: "fahmadrifki@gmail.com",
       subject : "Konfirmasi Pembayaran",
       html : `
         <h5>Dear All</h5>
