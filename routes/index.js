@@ -150,6 +150,10 @@ router.get('/subscribe-now/:package/location-promo/:location/:contract', functio
     res.render('subscribe-location-promo', { title: 'Groovy - Subscribe', selectpackage: req.params.package, location: 'Elang Laut' , contract: req.params.contract, price: price, instalfee: instalfee, location:location });
 });
 
+router.get('/payment-confirm', function(req, res, next) {
+    res.render('subscribe-confirm', { title: 'Groovy - Payment Confirm' });
+});
+
 router.get('/subscribe-done/:result', function(req, res, next) {
     res.render('subscribe-done', { title: 'Groovy - Subscribe Done', result:req.params.result });
 });

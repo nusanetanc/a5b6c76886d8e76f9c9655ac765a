@@ -1,19 +1,22 @@
-//coverage area
-$("#location-residential").hide();
-$("#location-apartment").hide();
-$("#tower").hide();
-$("#floor").hide();
-$("#unit").hide();
-$("#no").hide();
-$("#street").hide();
-$("#type").hide();
-$("#coverage-tab").hide();
-$("#notcoverage").hide();
-$("#coverage-tab").hide();
-$("#customer-data-tab").hide();
-$("#summary-tab").hide();
-$("#customer-prev-tab").hide();
-$("#registerBroadbandFo").hide();
+function Load() {
+  //coverage area
+  $("#location-residential").hide();
+  $("#location-apartment").hide();
+  $("#tower").hide();
+  $("#floor").hide();
+  $("#unit").hide();
+  $("#no").hide();
+  $("#street").hide();
+  $("#type").hide();
+  $("#coverage-tab").hide();
+  $("#notcoverage").hide();
+  $("#coverage-tab").hide();
+  $("#customer-data-tab").hide();
+  $("#summary-tab").hide();
+  $("#customer-prev-tab").hide();
+  $("#registerBroadbandFo").hide();
+}
+window.onload = Load;
 
 //select city
 function selectRegion() {
