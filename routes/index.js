@@ -250,7 +250,7 @@ router.post('/subscribe-now/:selectpackage', function(req, res){
         place: `+loc+` - `+req.body.city+`<br/>
         detail place: `+detloc+`<br/>
         KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
-        Terimaksih` ,
+        Terimakasih` ,
         attachments: [{
         filename: req.body.fullname+'.png',
         path: './uploads/'+fullName+'.jpg',
@@ -345,7 +345,7 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
         place: `+loc+`<br/>
         detail place: `+detloc+`<br/>
         KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
-        Terimaksih`,
+        Terimakasih`,
           attachments: [{
           filename: req.body.fullname+'.png',
           path: './uploads/'+fullName+'.jpg',
@@ -388,7 +388,7 @@ router.post('/contact', function(req, res){
         Nama: `+req.body.name+`<br/>
         Email: `+req.body.email+`<br/>
         Message: `+req.body.message+`<br/>
-        Terimaksih`
+        Terimakasih`
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
@@ -417,7 +417,7 @@ router.post('/groovy-online-registration/inquiry-form', function(req, res){
         Location: `+req.body.location+`<br/>
         Detail Location: `+req.body.detail+`<br/>
         Additional: `+req.body.addtional+`<br/>
-        Terimaksih`
+        Terimakasih`
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
@@ -446,7 +446,7 @@ router.post('/payment-confirm', function(req, res){
       });
     }
   var mailOptions={
-      to: "yudi.nurhandi@nusa.net.id, rifki@nusa.net.id",
+      to: "yudi.nurhandi@nusa.net.id",
       subject : "Konfirmasi Pembayaran",
       html : `
         <h5>Dear All</h5>
@@ -454,7 +454,7 @@ router.post('/payment-confirm', function(req, res){
         Id Customer: `+req.body.idPayConfirm+`<br/>
         No Invoice: `+req.body.noInvoicePayConfirm+`<br/>
         Bukti Pembayaran: <img width="200px" src="cid:proofpayment"/><br/>
-        Terimaksih`,
+        Terimakasih`,
           attachments: [{
           filename: req.body.noInvoicePayConfirm+'.png',
           path: './proofpayment/'+noInvoicePayConfirm+'.jpg',
@@ -466,10 +466,10 @@ router.post('/payment-confirm', function(req, res){
       if(error){
         console.log(error);
         req.flash('result','Sorry Submit Contact Us Failed, Please Try Again');
-        res.redirect('/contact');
+        res.redirect('/payment-confirm');
       }else{
         req.flash('result','Message Contact Send');
-        res.redirect('/contact');
+        res.redirect('/payment-confirm');
       }
     });      
 });
