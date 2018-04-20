@@ -426,6 +426,7 @@ $('#email').bind('input', function() {
 
 // button tab
   $("#customer-data-tab").click(function(){
+    alert('tes');
     $("#coverage-tab").show();
     $("#customer-data-tab").hide();
     $("#summary-tab").hide();
