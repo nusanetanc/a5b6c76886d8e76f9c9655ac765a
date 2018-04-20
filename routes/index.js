@@ -59,8 +59,8 @@ router.get('/subscribe-now/:package', function(req, res, next) {
 });
 
 router.get('/subscribe-now/:package/location-promo/:location/:contract', function(req, res, next) {
-  if(req.params.location = '68fe3a248c3adb714f407aa275bc0e2f'){
-    var location = 'Perumahan Permata Gading'
+  if(req.params.location = '864c445f0bd5c26cb3dbbaa08a82c850daaaa70f6a362cb1f0fd72be18810a51'){
+    var location = 'Pondok Pinang'
   } else{
     var location = 'Error'
   }
@@ -311,6 +311,19 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
     } */ 
     //var fileKtp = req.files.uploadKTP
     //var saveFile = fileKtp.mv('./public/images/ktp/'+req.body.fullname+'.png');
+    let ktpFile = req.files.uploadKTP;
+    let fullName = req.body.fullname;
+    if (ktpFile == undefined ){
+      console.log("no ktp uploaded")
+    }else {
+      // Use the mv() method to place the file somewhere on your server
+      ktpFile.mv('./uploads/'+fullName+'.jpg', function(err) {
+        if (err)
+          return res.status(500).send(err);
+     
+        console.log('KTP upload succesfully');
+      });
+    }
       var loc = req.body.locationselectresidential;
       var detloc = req.body.blokstreetSelect+', No. '+req.body.noSelect;
     var mailOptions={
@@ -328,7 +341,12 @@ router.post('/subscribe-now/:selectpackage/location-promo/:contract', function(r
         place: `+loc+`<br/>
         detail place: `+detloc+`<br/>
         KTP: <img width="200px" src="cid:kartuidentitas"/><br/>
-        Terimaksih`
+        Terimaksih`,
+          attachments: [{
+          filename: req.body.fullname+'.png',
+          path: './uploads/'+fullName+'.jpg',
+          cid: 'kartuidentitas'
+        }] 
       }
       console.log(mailOptions);
       smtpTransport.sendMail(mailOptions, function(error, response){
