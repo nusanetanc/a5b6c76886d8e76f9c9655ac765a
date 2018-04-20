@@ -18,9 +18,9 @@ var smtpTransport = nodemailer.createTransport({
 var smtpTransport = nodemailer.createTransport({
     host: "mail.groovy.id",
     port: 25,
-    secure: true,
+    secure: false,
     auth: {
-        user: "website@groovy.id",
+        user: "website",
         pass: "!groovy!2018"
     }
 });
