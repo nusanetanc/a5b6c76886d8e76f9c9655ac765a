@@ -5,7 +5,7 @@ var nodemailer = require("nodemailer");
 var flash = require('express-flash');
 var Register = require('../models/register');
 var path = require("path");
-/*
+
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -13,8 +13,8 @@ var smtpTransport = nodemailer.createTransport({
         pass: "groovyplay"
     }
 });
-*/
 
+/*
 var smtpTransport = nodemailer.createTransport({
     host: "groovy.id",
     port: 25,
@@ -24,7 +24,7 @@ var smtpTransport = nodemailer.createTransport({
         pass: "!groovy!2018"
     }
 });
-
+*/
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('homepage', { title: 'Groovy - Home' });
