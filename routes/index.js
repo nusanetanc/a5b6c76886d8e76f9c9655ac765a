@@ -5,12 +5,22 @@ var nodemailer = require("nodemailer");
 var flash = require('express-flash');
 var Register = require('../models/register');
 var path = require("path");
-
+/*
 var smtpTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
         user: "web.groovyplay",
         pass: "groovyplay"
+    }
+});
+*/
+
+var smtpTransport = nodemailer.createTransport({
+    host: "mail.groovy.id",
+    port: 25,
+    auth: {
+        user: "website",
+        pass: "!groovy!2018"
     }
 });
 
