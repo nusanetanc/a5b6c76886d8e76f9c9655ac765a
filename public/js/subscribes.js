@@ -424,9 +424,9 @@ $('#email').bind('input', function() {
   }
 });
 
+$(document).ready(function() {
 // button tab
   $("#customer-data-tab").click(function(){
-    alert('tes');
     $("#coverage-tab").show();
     $("#customer-data-tab").hide();
     $("#summary-tab").hide();
@@ -456,5 +456,5 @@ $('#email').bind('input', function() {
     $("#customer-prev-tab").hide();
     $("#registerBroadbandFo").hide();
   });
-  
-//select coverage area
+
+});
