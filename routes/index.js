@@ -372,7 +372,7 @@ router.post('/contact', function(req, res){
 
 router.post('/groovy-online-registration/inquiry-form', function(req, res){
   var mailOptions={
-      to: "nurhandiy@gmail.com",
+      to: "yudi.nurhandi@nusa.net.id, nurhandiy@gmail.com",
       subject : "Web inquiry form (Form Permintaan Tidak Tercover) Groovy",
       html : `
         <h5>Dear All</h5>
