@@ -453,12 +453,12 @@ router.post('/payment-confirm', function(req, res){
         <h6>Berikut konfirmasi pembayaran groovy<br/>
         Id Customer: `+req.body.idPayConfirm+`<br/>
         No Invoice: `+req.body.noInvoicePayConfirm+`<br/>
-        Bukti Pembayaran: <br/>
+        Bukti Pembayaran: <img width="200px" src="cid:proofpayment"/><br/>
         Terimaksih`,
           attachments: [{
           filename: req.body.noInvoicePayConfirm+'.png',
           path: './proofpayment/'+noInvoicePayConfirm+'.jpg',
-          cid: 'kartuidentitas'
+          cid: 'proofpayment'
         }] 
       }
       console.log(mailOptions);
