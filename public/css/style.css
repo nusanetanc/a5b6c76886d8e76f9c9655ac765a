@@ -115,19 +115,19 @@ body{
 }
 
 .navbar-brand.brand-white{
-    display:relative;
+    display:flex !important;
 }
 
 .navbar-brand.brand-white.animation{
-    display:none;
+    display:none !important;
 }
 
 .navbar-brand.brand-grad.animation{
-    display:relative;
+    display:flex !important;
 }
 
 .navbar-brand.brand-grad{
-    display:none;
+    display:none !important;
 }
 
 
