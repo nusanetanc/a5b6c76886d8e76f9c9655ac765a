@@ -28,6 +28,12 @@ body{
     max-width:1440px;
 }
 
+.navbar-groovy .nav-link{
+    color:#fff !important;
+    font-size:13px;
+    padding: 0.5rem 1rem;
+}
+
 .navbar-logo{
     height:35px;
     margin:13px 15px 10px 5px;
