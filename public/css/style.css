@@ -80,10 +80,10 @@ body{
 
 /*----------------------Content-----------------------------*/
 .main-wall {
-    padding: 200px 80px 350px 80px;
+    padding: 190px 80px 350px 80px;
     background-color: #fff;
     color: #fff;
-    background-image:url(/images/bg-homepage-1.png);
+    background-image:url(/images/bg-homepage-4.png);
     background-size:100%;  
     background-repeat:no-repeat;
     background-position: top center;
