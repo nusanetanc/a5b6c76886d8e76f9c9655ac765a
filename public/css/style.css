@@ -114,6 +114,21 @@ body{
     margin:0 auto;
 }
 
+.navbar-brand.brand-white{
+    display:relative;
+}
+
+.navbar-brand.brand-white.animation{
+    display:none;
+}
+
+.navbar-brand.brand-grad.animation{
+    display:relative;
+}
+
+.navbar-brand.brand-grad{
+    display:none;
+}
 
 
 /*--------------------End Navbar----------------------------*/

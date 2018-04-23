@@ -39,6 +39,7 @@
        */
       myAnimation.init(  [
           "navbar-groovy",
+          "navbar-brand",
       ]);
       
       /**
