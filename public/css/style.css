@@ -114,19 +114,19 @@ body{
     margin:0 auto;
 }
 
-.navbar-brand.brand-white{
+#navbar-brand-white{
     display:block !important;
 }
 
-.navbar-brand.brand-white.animation{
+#navbar-brand-white.animation{
     display:none !important;
 }
 
-.navbar-brand.brand-grad{
+#navbar-brand-grad{
     display:none !important;
 }
 
-.navbar-brand.brand-grad.animation{
+#navbar-brand-grad.animation{
     display:block !important;
 }
 

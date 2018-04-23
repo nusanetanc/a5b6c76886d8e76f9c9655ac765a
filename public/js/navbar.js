@@ -39,7 +39,8 @@
        */
       myAnimation.init(  [
           "navbar-groovy",
-          "navbar-brand",
+          "navbar-brand-white",
+          "navbar-brand-grad",
       ]);
       
       /**
