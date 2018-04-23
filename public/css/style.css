@@ -34,6 +34,12 @@ body{
     padding: 0.5rem 1rem;
 }
 
+.navbar-groovy.animation .nav-link{
+    color:#555 !important;
+    font-size:13px;
+    padding: 0.5rem 1rem;
+}
+
 .navbar-toggler-icon{
   color:#333 !important;
 }
