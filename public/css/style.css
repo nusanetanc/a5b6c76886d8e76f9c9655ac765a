@@ -80,26 +80,29 @@ body{
 
 /*----------------------Content-----------------------------*/
 .main-wall {
-    padding: 200px 80px 0 80px;
-    background-color: #e55534;
+    padding: 200px 80px 350px 80px;
+    background-color: #fff;
     color: #fff;
-    height:705px;
+    background-image:url(/images/bg-homepage-1.png);
+    background-size:100%;  
+    background-repeat:no-repeat;
+    background-position: top center;
 }
 .main-wall h2{
-    font-size:47px;
-    line-height: 57px;
+    font-size:44px;
+    line-height: 50px;
 }
 .main-wall p {
     font-size: 16px;
     opacity: 0.8;
-    margin: 25px 0 36px 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    margin: 20px 0 32px 0;
+    font-weight: 400;
 }
 .main-wall a{
     background-color:#fff;
-    padding: 15px 30px;
+    padding: 13px 30px;
     text-decoration:none;
+    border-radius:100px;
     color:#ed4225;
 }
 .main-wall-image {
