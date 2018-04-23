@@ -28,6 +28,17 @@ body{
     max-width:1440px;
 }
 
+.navbar-brand{
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
 .navbar-groovy .nav-link{
     color:#fff !important;
     font-size:13px;
@@ -143,8 +154,9 @@ body{
     
 }
 .main-wall-2 {
-        background-color: #fff;
-    padding: 120px 80px;
+    background-color: #fff;
+    padding: 50px 80px;
+    text-align: center;
 }
 .main-wall-2 h5 {
     font-size: 12px;
@@ -158,18 +170,15 @@ body{
 .main-wall-2 h3 {
     letter-spacing: 0.4px;
     line-height: 1.2;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 40px;
     margin-top: 0px;
-    color: #5e6369;
-}
-.main-wall-2 h4 {
-    margin-top: 40px;
-    color: #64696f;
+    color: #000000;
 }
 .main-wall-2 p{
-    font-size: 15px;
-    color: #9fa3a9;
+    font-size: 18px;
+    color: #a2a2a2;
+    margin-bottom: 40px;
 }
 .main-wall-2 img{
     margin-top:70px;
