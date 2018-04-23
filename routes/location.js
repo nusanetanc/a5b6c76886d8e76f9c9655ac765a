@@ -57,6 +57,12 @@ router.get('/nostreets/:name', function(req, res, next) {
    });
 });
 
+/* GET location listing. */
+router.get('/nostreets/:residentials/:name', function(req, res, next) {
+    NoStreets.find({name: req.params.name, residentials: req.params.residentials}, { nos: 1, _id: 0},  function(err, nostreets) {
+        res.send(nostreets);
+   });
+});
 
 /* Add residentials */
 router.post('/residentials', function(req, res, next) {

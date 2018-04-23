@@ -141,6 +141,7 @@ function selectLocationResidential() {
 //select Street
 function selectstreet() {
   var selectedArr = (document.getElementById("blokstreetSelect").value);
+  var selectedRes = (document.getElementById("locationselectresidential").value);
   var locations = document.getElementById('noSelect');
   if( selectedArr == '[Not Coverage]'){
     $("#coverage-tab").hide();
@@ -157,7 +158,7 @@ function selectstreet() {
     $("#street").show();
     $("#type").show(); 
   } else {
-  $.getJSON("http://groovy.id/location/nostreets/"+selectedArr, function(json){
+  $.getJSON("http://groovy.id/location/nostreets/"+selectedRes+"/"+selectedArr, function(json){
       var arrLocation = json;
       console.log(json)
       arrLocation.forEach(Locationfunc);
