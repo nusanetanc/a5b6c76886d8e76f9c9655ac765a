@@ -60,22 +60,6 @@ body{
     margin:13px 15px 10px 5px;
 }
 
-.sign-in-button {
-    background: linear-gradient(to right, #f05e34 , #f6a33e);
-    color: #fff !important;
-    border-radius: 20px;
-    font-weight:400 !important;
-    margin: 12px 20px 11px 20px !important;
-    padding: 7px 20px 7px 20px !important;
-    text-align:center;
-}
-.sign-in-button:hover{
-    background-color:#fc592e !important;
-    color: #fff !important;
-    cursor:pointer !important;
-    text-decoration:none;
-}
-
 .order-button {
     background-color:#fff;
     color: #fc592e !important;
@@ -127,6 +111,50 @@ body{
 }
 
 #navbar-brand-grad.animation{
+    display:block !important;
+}
+
+#sign-in-button-white{
+    display:block !important;
+    background-color: #fff !important;
+    color: #f05e34 !important;
+    border-radius: 20px;
+    font-weight:400 !important;
+    margin: 12px 20px 11px 20px !important;
+    padding: 7px 20px 7px 20px !important;
+    text-align:center;
+}
+
+#sign-in-button-grad:hover{
+    background: linear-gradient(to right, #f05e34 , #f6a33e);
+    color: #fff !important;
+    cursor:pointer !important;
+    text-decoration:none;
+}
+
+#sign-in-button-white.animation{
+    display:none !important;
+}
+
+#sign-in-button-grad{
+    display:none !important;
+    background: linear-gradient(to right, #f05e34 , #f6a33e);
+    color: #fff !important;
+    border-radius: 20px;
+    font-weight:400 !important;
+    margin: 12px 20px 11px 20px !important;
+    padding: 7px 20px 7px 20px !important;
+    text-align:center;
+}
+
+#sign-in-button-grad:hover{
+    background-color:#fc592e !important;
+    color: #fff !important;
+    cursor:pointer !important;
+    text-decoration:none;
+}
+
+#sign-in-button-grad.animation{
     display:block !important;
 }
 

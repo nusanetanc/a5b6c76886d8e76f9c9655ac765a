@@ -41,6 +41,8 @@
           "navbar-groovy",
           "navbar-brand-white",
           "navbar-brand-grad",
+          "sign-in-button-white",
+          "sign-in-button-grad",
       ]);
       
       /**
