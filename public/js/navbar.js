@@ -71,6 +71,3 @@
        * could be load with scroll down set.
        */
       offSetManager();
-      
-      
-      alert("aktif")
